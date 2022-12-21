@@ -1,0 +1,26 @@
+{% extends 'template.html' %}
+
+{% block style %}
+    <link rel="stylesheet" href="/static/css/view-blog.css">
+{% endblock %}
+
+{%block title%}
+    Sometitle
+{% endblock %}
+
+{% block main %}
+    <div class = 'blog_border'>
+        <div class = 'about_article'>
+            <div class = 'article_title'>{{article.title}}</div>
+            <div class = 'article_date'>{{article.time}}</div>
+        </div>
+        <div class = 'book-view'>
+            <div class = 'last_page'></div>
+            <div class = 'mid_column'>
+                <p>{{article.content}}</p>
+            </div>
+
+            <div class = 'next_page'></div>
+        </div>
+    </div>
+{% endblock %}

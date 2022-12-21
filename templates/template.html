@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/template.css">
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block style%}
+    {% endblock%}
+    <title> CaveDiary</title>
+</head>
+<!-- 主题图片 -->
+<body>
+    <div class = 'left-column'>
+            <div class = 'left-column-padding'></div>
+            <div class="left-main">
+                <div class = 'photo-padding'></div>
+                <!-- 用户头像 -->
+                <div class = 'photo-block'； style = "background-image: url(/{{ user_pic }});">
+                </div>
+                <div class = 'introduction'>
+                    <p>{{ user_motto }}</p>
+                    <!--This is the great world of imagination and best of all: enjoy yourself here!-->
+                </div>
+
+            </div>
+            <div class = 'container user_options'>
+                    <a type="button" class="btn btn-default" id = 'out_button' href = "{% url 'log_out'%}">log out</a>
+                    <a type="button" class="btn btn-default" id = 'edit_button'  href = "{% url 'edit_user'%}">Edit user</a>
+            </div>
+    </div>
+
+    <div class = 'right-column'>
+        <div class="title">
+            <a>{% block title%} &lt CaveDiary &gt {% endblock%}</a>
+
+        </div>
+        <div class = 'navigation'>
+                <div class = navigation-left>
+                    <a href = {% url 'home' %}> Home</a>
+                </div>
+                <div class = navigation-right>
+                    <ul>
+                        <li><a href = '{% url 'diary' %}'> Diary</a></li>
+                        <li><a href = '{% url 'blog' %}'> Blog</a></li>
+                        <li><a href = '{% url 'progress' %}'> Progress</a></li>
+                        <li><a href = '{% url 'app' %}'> App</a></li>
+                    </ul>
+                </div>
+        </div>
+        <div class = 'main'>
+            <div class="main-padding"></div>
+            <div class = 'main-block'>
+            {% block main%}
+                <p>You can treat this website as an game app. Try the game, 'cause life is a game.</p>
+            {% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

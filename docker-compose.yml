@@ -1,0 +1,27 @@
+version: '3'
+services:
+  db:
+    restart: always
+    image: mysql
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysqldata:/var/lib/mysql:rw,delegated
+    environment:
+      MYSQL_DATABASE: 'webs'
+      MYSQL_USER: 'root'
+      MYSQL_PASSWORD: 'asdjhr666'
+      MYSQL_ROOT_PASSWORD: 'asdjhr666'
+
+  web:
+    restart: always
+    build: .
+    command: python ./manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    links:
+      - db

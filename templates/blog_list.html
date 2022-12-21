@@ -1,0 +1,28 @@
+{% extends 'template.html' %}
+
+{% block style %}
+    <link rel="stylesheet" href="/static/css/blog_list.css">
+{% endblock %}
+
+{%block title%}
+    Sometitle
+{% endblock %}
+
+{% block main %}
+    <div class = 'blog_border'>
+        <div class = 'about_article'>
+            <div class = 'article_title'>Blog list</div>
+            <a href = {% url 'edit_blog'%} class = 'article_date'>New blog</a>
+            </div>
+        <div class = 'book-view'>
+            <div class = 'last_page'></div>
+            <div class = 'mid_column'>
+                {% for article in articles %}
+                <div><a href="/view_blog/{{ article.id }}" > {{article.title}} <p>{{article.time}}</p></a> </div>
+                {% endfor %}
+            </div>
+
+            <div class = 'next_page'></div>
+        </div>
+    </div>
+{% endblock %}

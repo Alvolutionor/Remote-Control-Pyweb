@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/login.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="offset-3 col-6">
+                <form class="form-horizontal" method="post">
+                    {% csrf_token %}
+                    <span class="heading">Welcome Back</span>
+                    <div class="form-group">
+                        <input type="username" class="form-control" name="username"  placeholder="Username">
+                        <i class="fa fa-user"></i>
+                    </div>
+                    <div class="form-group help">
+                        <input type="password" class="form-control" name = "password" placeholder="Password">
+                        <i class="fa fa-lock"></i>
+                        <a href="#" class="fa fa-question-circle"></a>
+                    </div>
+                    <div class="form-group">
+                        <div class="main-checkbox">
+                            <input type="checkbox" value="None" id="checkbox1" name="check"/>
+                            <label for="checkbox1"></label>
+                        </div>
+                        <span class="text">Remember me</span>
+                        <button type="submit" class="btn btn-default">Login</button>
+                        <a type="button" class="btn" href = '/register'>Register</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

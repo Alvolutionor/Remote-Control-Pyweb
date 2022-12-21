@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/register.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row" id = 'formrow'>
+            <div class="offset-3 col-6">
+                <br>
+                <form method="post" action=".">
+                    {% csrf_token %}
+                    <!-- 账号 -->
+                    <label id = 'Form-title'>Register for your diary app!</label>
+                    <div class="form-group col-12">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" name="username" required>
+                    </div>
+                    <!-- 邮箱 -->
+                    <div class="form-group col-12">
+                        <label for="email">Email</label>
+                        <input type="text" class="form-control" id="email" name="email">
+                    </div>
+                    <!-- 密码 -->
+                    <div class="form-group col-12">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                    <!-- 确认密码 -->
+                    <div class="form-group col-12">
+                        <label for="password2">Confirm your password</label>
+                        <input type="password" class="form-control" id="password2" name="password2" required>
+                    </div>
+                    <!-- 提交按钮 -->
+                    <button type="submit" class="offset-9 col-3 btn btn-primary" id ='submit-button'>Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

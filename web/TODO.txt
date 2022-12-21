@@ -1,0 +1,16 @@
+Ajax --> dynamic refresh and represent like scr shots
+Js : get mouse event
+celery --> parrallel thread processing (e.g. register code )
+show to others: add link like github.
+
+
+
+web computer
+
+
+上传头像格式check pil
+FORM SEPERATE MVC
+
+DOCKER
+LINUX
+中文
